@@ -1,29 +1,35 @@
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
-  final currentPage = 0.obs;
+  final isLogoVisible = false.obs;
+  final isTextVisible = false.obs;
+  final isTaglineVisible = false.obs;
+  final isLoaderVisible = false.obs;
 
-  final splashData = const [
-    {
-      'text': 'Welcome to E-commerce Demo, Let\'s shop!',
-      'image': 'https://i.postimg.cc/mhhVywp9/splash-1.png',
-    },
-    {
-      'text':
-          'We help people connect with store \naround United State of America',
-      'image': 'https://i.postimg.cc/PNcy3w0R/splash-2.png',
-    },
-    {
-      'text': 'We show the easy way to shop. \nJust stay at home with us',
-      'image': 'https://i.postimg.cc/wRtVxqR2/splash-3.png',
-    },
-  ];
-
-  void changePage(int index) {
-    currentPage.value = index;
+  @override
+  void onInit() {
+    super.onInit();
+    _startAnimationSequence();
   }
 
-  void finishSplash() {
+  Future<void> _startAnimationSequence() async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    isLogoVisible.value = true;
+
+    await Future.delayed(const Duration(milliseconds: 500));
+    isTextVisible.value = true;
+
+    await Future.delayed(const Duration(milliseconds: 400));
+    isTaglineVisible.value = true;
+
+    await Future.delayed(const Duration(milliseconds: 300));
+    isLoaderVisible.value = true;
+
+    await Future.delayed(const Duration(milliseconds: 1500));
+    _navigateToHome();
+  }
+
+  void _navigateToHome() {
     Get.offNamed('/home');
   }
 }

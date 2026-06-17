@@ -10,18 +10,16 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('HomeView'), centerTitle: true),
-
-      body: const Center(
-        child: Text('HomeView is working', style: TextStyle(fontSize: 20)),
+      drawer: Drawer(
+        child: ListView(
+          children: [const ListTile(title: Text('Demo e-commerce'))],
+        ),
       ),
-
+      appBar: AppBar(title: const Text('Demo e-commerce'), centerTitle: true),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.toNamed('/splash');
+          Get.offNamed('/splash');
         },
-
-        child: Icon(Icons.add),
       ),
     );
   }
