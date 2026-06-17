@@ -123,7 +123,11 @@ class _SplashViewState extends State<SplashView> {
                           .fadeIn(delay: 450.ms, duration: 450.ms)
                           .slideY(begin: 0.4, end: 0),
                       const SizedBox(height: 32),
-                      _ContinueButton(onPressed: _continuePressed),
+                      Obx(() => _ContinueButton(
+                        onPressed: _continuePressed,
+                        isLastPage: controller.currentPage.value ==
+                            controller.splashData.length - 1,
+                      )),
                       const SizedBox(height: 20),
                     ],
                   );
@@ -216,9 +220,13 @@ class SplashContent extends StatelessWidget {
 }
 
 class _ContinueButton extends StatelessWidget {
-  const _ContinueButton({required this.onPressed});
+  const _ContinueButton({
+    required this.onPressed,
+    this.isLastPage = false,
+  });
 
   final VoidCallback onPressed;
+  final bool isLastPage;
 
   @override
   Widget build(BuildContext context) {
@@ -233,9 +241,13 @@ class _ContinueButton extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(16)),
             ),
           ),
-          child: const Text(
-            'Continue',
-            style: TextStyle(fontWeight: FontWeight.w600),
+          child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 250),
+            child: Text(
+              isLastPage ? 'Continue' : 'Next',
+              key: ValueKey(isLastPage),
+              style: const TextStyle(fontWeight: FontWeight.w600),
+            ),
           ),
         )
         .animate()

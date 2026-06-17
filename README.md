@@ -11,6 +11,23 @@ Flutter + GetX diye banano simple ecommerce demo app.
 - Image load hote deri hole loading spinner dekhabe, error hole fallback icon dekhabe.
 - Splash screen fully animated kora hoyeche: title/text entry, image floating, button shimmer, animated background, page transition.
 
+## Splash button: Next vs Continue
+
+Last splash page-er button-e **"Continue"** dekhabe, baki page gulo te **"Next"** dekhabe.
+
+Keno:
+
+- User bujhte parbe kothay splash sesh hobe.
+- "Next" mane porborti splash page-e jabe.
+- "Continue" mane splash sesh kore home screen-e jabe.
+
+Ki kora hoyeche:
+
+- `_ContinueButton` widget-e notun `isLastPage` parameter add kora hoyeche.
+- `Obx()` diye button wrap kora hoyeche jate `currentPage` change hole button text auto-update hoy.
+- `AnimatedSwitcher` use kora hoyeche jate "Next" → "Continue" text change smooth animation-e hoy.
+- Last page detect hoy `controller.currentPage.value == controller.splashData.length - 1` diye.
+
 ## Latest bug fix: multiple ScrollController attach
 
 Problem:
@@ -40,6 +57,66 @@ Future rule:
 - `TextEditingController`, `PageController`, `ScrollController`, `AnimationController` er moto UI lifecycle object usually widget `State` er moddhe rakha better.
 - GetX controller-e only business logic/data rakho, jemon current page index, API data, route action.
 - Same controller instance multiple widget-e attach korte dio na.
+
+## Tooling/path error fix
+
+Problem:
+
+```text
+Unable to get relative path between file:///c:/Users/Sourav sanyal/StudioProjects/demo_ecommerce_app/lib/app/modules/Splash/views/splash_view.dart and ; Base path '' must be an absolute path
+```
+
+Eta usually Dart/Flutter code-er syntax problem na. Eta IDE/runner project root detect korte na parle hoy.
+
+Keno hoy:
+
+- Single Dart file run korle IDE sometimes project root/base path empty dhore.
+- Terminal current folder project root na hole Flutter relative path resolve korte pare na.
+- Path copy korar somoy `\lib\...` diye start korle eta absolute path na, tai resolver fail korte pare.
+
+Fix:
+
+1. Android Studio/VS Code-e puro project folder open koro:
+
+```text
+c:\Users\Sourav sanyal\StudioProjects\demo_ecommerce_app
+```
+
+2. Single file run na kore project root theke run koro:
+
+```bash
+flutter run
+```
+
+3. Terminal wrong folder-e thakle first project folder-e jao:
+
+```bash
+cd "c:\Users\Sourav sanyal\StudioProjects\demo_ecommerce_app"
+flutter pub get
+flutter run
+```
+
+4. File path lagle relative path use koro:
+
+```text
+lib/app/modules/Splash/views/splash_view.dart
+```
+
+5. Backslash diye root-less path use koro na:
+
+```text
+\lib\app\modules\Splash\views\splash_view.dart
+```
+
+Karon eta absolute path na. Absolute path hole full drive path thakte hobe:
+
+```text
+c:\Users\Sourav sanyal\StudioProjects\demo_ecommerce_app\lib\app\modules\Splash\views\splash_view.dart
+```
+
+Extra fix:
+
+- `test/widget_test.dart` file-e valid `main()` smoke test add kora hoyeche, jate `flutter test` missing-main error na dey.
 
 ## Pub.dev package add korar niyom
 
