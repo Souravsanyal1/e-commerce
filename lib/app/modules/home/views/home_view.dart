@@ -98,25 +98,32 @@ class HomeView extends GetView<HomeController> {
                     child: Obx(
                       () => controller.cartItemCount > 0
                           ? Container(
-                              padding: const EdgeInsets.all(4),
-                              decoration: const BoxDecoration(
-                                color: Color(0xFFFF5A36),
-                                shape: BoxShape.circle,
-                              ),
-                              constraints: const BoxConstraints(
-                                minWidth: 16,
-                                minHeight: 16,
-                              ),
-                              child: Text(
-                                '${controller.cartItemCount}',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 8,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ).animate(key: ValueKey(controller.cartItemCount)).scale(duration: 300.ms, curve: Curves.elasticOut)
+                                  padding: const EdgeInsets.all(4),
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFFFF5A36),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  constraints: const BoxConstraints(
+                                    minWidth: 16,
+                                    minHeight: 16,
+                                  ),
+                                  child: Text(
+                                    '${controller.cartItemCount}',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 8,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                )
+                                .animate(
+                                  key: ValueKey(controller.cartItemCount),
+                                )
+                                .scale(
+                                  duration: 300.ms,
+                                  curve: Curves.elasticOut,
+                                )
                           : const SizedBox.shrink(),
                     ),
                   ),
@@ -178,26 +185,32 @@ class HomeView extends GetView<HomeController> {
                     Positioned(
                       top: -4,
                       right: -6,
-                      child: Container(
-                        padding: const EdgeInsets.all(2),
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFFF5A36),
-                          shape: BoxShape.circle,
-                        ),
-                        constraints: const BoxConstraints(
-                          minWidth: 13,
-                          minHeight: 13,
-                        ),
-                        child: Text(
-                          '${controller.cartItemCount}',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ).animate(key: ValueKey(controller.cartItemCount)).scale(duration: 250.ms, curve: Curves.easeOutBack),
+                      child:
+                          Container(
+                                padding: const EdgeInsets.all(2),
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFFF5A36),
+                                  shape: BoxShape.circle,
+                                ),
+                                constraints: const BoxConstraints(
+                                  minWidth: 13,
+                                  minHeight: 13,
+                                ),
+                                child: Text(
+                                  '${controller.cartItemCount}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 7,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              )
+                              .animate(key: ValueKey(controller.cartItemCount))
+                              .scale(
+                                duration: 250.ms,
+                                curve: Curves.easeOutBack,
+                              ),
                     ),
                 ],
               ),
@@ -209,26 +222,32 @@ class HomeView extends GetView<HomeController> {
                     Positioned(
                       top: -4,
                       right: -6,
-                      child: Container(
-                        padding: const EdgeInsets.all(2),
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFFF5A36),
-                          shape: BoxShape.circle,
-                        ),
-                        constraints: const BoxConstraints(
-                          minWidth: 13,
-                          minHeight: 13,
-                        ),
-                        child: Text(
-                          '${controller.cartItemCount}',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ).animate(key: ValueKey(controller.cartItemCount)).scale(duration: 250.ms, curve: Curves.easeOutBack),
+                      child:
+                          Container(
+                                padding: const EdgeInsets.all(2),
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFFF5A36),
+                                  shape: BoxShape.circle,
+                                ),
+                                constraints: const BoxConstraints(
+                                  minWidth: 13,
+                                  minHeight: 13,
+                                ),
+                                child: Text(
+                                  '${controller.cartItemCount}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 7,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              )
+                              .animate(key: ValueKey(controller.cartItemCount))
+                              .scale(
+                                duration: 250.ms,
+                                curve: Curves.easeOutBack,
+                              ),
                     ),
                 ],
               ),
@@ -282,13 +301,24 @@ class HomeView extends GetView<HomeController> {
                     color: Color(0xFFFFF1EE),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.location_on, color: Color(0xFFFF5A36)),
+                  child: const Icon(
+                    Icons.location_on,
+                    color: Color(0xFFFF5A36),
+                  ),
                 ),
-                title: const Text('Inside Dhaka', style: TextStyle(fontWeight: FontWeight.w600)),
-                subtitle: const Text('Flat Delivery Rate: ৳৬০ • Delivery in 24-48 Hours'),
+                title: const Text(
+                  'Inside Dhaka',
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
+                subtitle: const Text(
+                  'Flat Delivery Rate: ৳৬০ • Delivery in 24-48 Hours',
+                ),
                 trailing: Obx(
                   () => controller.deliveryLocation.value == 'Dhaka'
-                      ? const Icon(Icons.check_circle_rounded, color: Color(0xFFFF5A36))
+                      ? const Icon(
+                          Icons.check_circle_rounded,
+                          color: Color(0xFFFF5A36),
+                        )
                       : const SizedBox.shrink(),
                 ),
                 onTap: () {
@@ -305,13 +335,24 @@ class HomeView extends GetView<HomeController> {
                     color: Color(0xFFFFF1EE),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.location_on, color: Color(0xFFFF5A36)),
+                  child: const Icon(
+                    Icons.location_on,
+                    color: Color(0xFFFF5A36),
+                  ),
                 ),
-                title: const Text('Outside Dhaka (Chattogram etc.)', style: TextStyle(fontWeight: FontWeight.w600)),
-                subtitle: const Text('Flat Delivery Rate: ৳১২০ • Delivery in 3-5 Days'),
+                title: const Text(
+                  'Outside Dhaka (Chattogram etc.)',
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
+                subtitle: const Text(
+                  'Flat Delivery Rate: ৳১২০ • Delivery in 3-5 Days',
+                ),
                 trailing: Obx(
                   () => controller.deliveryLocation.value != 'Dhaka'
-                      ? const Icon(Icons.check_circle_rounded, color: Color(0xFFFF5A36))
+                      ? const Icon(
+                          Icons.check_circle_rounded,
+                          color: Color(0xFFFF5A36),
+                        )
                       : const SizedBox.shrink(),
                 ),
                 onTap: () {
@@ -332,23 +373,30 @@ class HomeView extends GetView<HomeController> {
       context: context,
       builder: (context) {
         return Obx(() {
-          final wishlisted = controller.products.where((p) => controller.wishlist.contains(p.id)).toList();
+          final wishlisted = controller.products
+              .where((p) => controller.wishlist.contains(p.id))
+              .toList();
 
           return AlertDialog(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
             backgroundColor: Colors.white,
             title: Row(
               children: [
                 const Icon(Icons.favorite, color: Colors.red, size: 20),
                 const SizedBox(width: 8),
-                const Text('My Wishlist', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                const Text(
+                  'My Wishlist',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
                 const Spacer(),
                 IconButton(
                   onPressed: () => Navigator.pop(context),
                   icon: const Icon(Icons.close, size: 20),
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
-                )
+                ),
               ],
             ),
             content: wishlisted.isEmpty
@@ -358,9 +406,19 @@ class HomeView extends GetView<HomeController> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.favorite_border_rounded, size: 36, color: Colors.grey.shade400),
+                        Icon(
+                          Icons.favorite_border_rounded,
+                          size: 36,
+                          color: Colors.grey.shade400,
+                        ),
                         const SizedBox(height: 8),
-                        Text('Your wishlist is empty', style: TextStyle(fontSize: 12, color: Colors.grey.shade500)),
+                        Text(
+                          'Your wishlist is empty',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey.shade500,
+                          ),
+                        ),
                       ],
                     ),
                   )
@@ -382,24 +440,35 @@ class HomeView extends GetView<HomeController> {
                               width: 50,
                               height: 50,
                               fit: BoxFit.cover,
-                              placeholder: (context, url) => Container(color: Colors.grey.shade100),
+                              placeholder: (context, url) =>
+                                  Container(color: Colors.grey.shade100),
                             ),
                           ),
                           title: Text(
                             product.title,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                           subtitle: Text(
                             '৳${product.activePrice.toStringAsFixed(0)}',
-                            style: const TextStyle(color: Color(0xFFFF5A36), fontWeight: FontWeight.w700, fontSize: 12),
+                            style: const TextStyle(
+                              color: Color(0xFFFF5A36),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12,
+                            ),
                           ),
                           trailing: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               IconButton(
-                                icon: const Icon(Icons.shopping_cart_outlined, size: 18),
+                                icon: const Icon(
+                                  Icons.shopping_cart_outlined,
+                                  size: 18,
+                                ),
                                 color: const Color(0xFFFF5A36),
                                 onPressed: () {
                                   controller.addToCart(product);
@@ -407,8 +476,13 @@ class HomeView extends GetView<HomeController> {
                                 },
                               ),
                               IconButton(
-                                icon: const Icon(Icons.delete_outline, size: 18, color: Colors.red),
-                                onPressed: () => controller.toggleWishlist(product.id),
+                                icon: const Icon(
+                                  Icons.delete_outline,
+                                  size: 18,
+                                  color: Colors.red,
+                                ),
+                                onPressed: () =>
+                                    controller.toggleWishlist(product.id),
                               ),
                             ],
                           ),
@@ -443,6 +517,30 @@ class _HomeTab extends GetView<HomeController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Announcement Bar (Marquee)
+            Container(
+              color: const Color(0xFFFFF1EE),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.campaign_rounded,
+                    color: Color(0xFFFF5A36),
+                    size: 18,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: SizedBox(
+                      height: 18,
+                      child: const _MarqueeText(
+                        '🔥 Welcome to BazaarBD! Use coupon "BAZAAR10" to get 10% off. Use coupon "EID50" for 50% discount on Eid collections! Free delivery inside Dhaka for orders above ৳১০০০!',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
             // Search Bar & Filter Row
             const SizedBox(height: 12),
             const _HomeSearchBar(),
@@ -504,7 +602,7 @@ class _HomeSearchBar extends GetView<HomeController> {
               color: Colors.black.withValues(alpha: 0.02),
               blurRadius: 4,
               offset: const Offset(0, 2),
-            )
+            ),
           ],
         ),
         child: Row(
@@ -516,22 +614,98 @@ class _HomeSearchBar extends GetView<HomeController> {
                 onChanged: (val) => controller.searchQuery.value = val,
                 decoration: InputDecoration(
                   hintText: 'Search organic rice, fashion, watch...',
-                  hintStyle: TextStyle(color: Colors.grey.shade400, fontSize: 13),
+                  hintStyle: TextStyle(
+                    color: Colors.grey.shade400,
+                    fontSize: 13,
+                  ),
                   border: InputBorder.none,
                   isDense: true,
                 ),
                 style: const TextStyle(fontSize: 14),
               ),
             ),
-            const VerticalDivider(width: 20, thickness: 1, indent: 8, endIndent: 8),
+            const VerticalDivider(
+              width: 20,
+              thickness: 1,
+              indent: 8,
+              endIndent: 8,
+            ),
             GestureDetector(
               onTap: () {
-                Get.snackbar('Filter', 'Advanced filtering option coming soon!', snackPosition: SnackPosition.BOTTOM);
+                Get.snackbar(
+                  'Filter',
+                  'Advanced filtering option coming soon!',
+                  snackPosition: SnackPosition.BOTTOM,
+                );
               },
-              child: const Icon(Icons.tune_rounded, color: Color(0xFFFF5A36), size: 18),
+              child: const Icon(
+                Icons.tune_rounded,
+                color: Color(0xFFFF5A36),
+                size: 18,
+              ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+//__ Marquee Text Widget __
+class _MarqueeText extends StatefulWidget {
+  final String text;
+  const _MarqueeText(this.text);
+
+  @override
+  State<_MarqueeText> createState() => _MarqueeTextState();
+}
+
+class _MarqueeTextState extends State<_MarqueeText> {
+  final _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _animateMarquee());
+  }
+
+  void _animateMarquee() async {
+    while (mounted) {
+      await Future.delayed(const Duration(seconds: 3));
+      if (!mounted) break;
+      if (_scrollController.hasClients) {
+        await _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(seconds: 8),
+          curve: Curves.linear,
+        );
+        await Future.delayed(const Duration(seconds: 1));
+        if (!mounted) break;
+        _scrollController.jumpTo(0);
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      controller: _scrollController,
+      scrollDirection: Axis.horizontal,
+      physics: const NeverScrollableScrollPhysics(),
+      child: Text(
+        widget.text,
+        style: const TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+          color: Color(0xFF475569),
+        ),
+        maxLines: 1,
       ),
     );
   }
@@ -566,7 +740,7 @@ class _CampaignSliderState extends State<_CampaignSlider> {
       'subtitle': 'Original cold pressed mustard oil, organic Chinigura rice.',
       'tag': '100% PURE',
       'colors': [Color(0xFF00796B), Color(0xFF4DB6AC)],
-    }
+    },
   ];
 
   @override
@@ -592,10 +766,12 @@ class _CampaignSliderState extends State<_CampaignSlider> {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: (banner['colors'][0] as Color).withValues(alpha: 0.25),
+                      color: (banner['colors'][0] as Color).withValues(
+                        alpha: 0.25,
+                      ),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
-                    )
+                    ),
                   ],
                 ),
                 child: Row(
@@ -607,27 +783,43 @@ class _CampaignSliderState extends State<_CampaignSlider> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 4,
+                            ),
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
                               banner['tag'] as String,
-                              style: const TextStyle(color: Colors.white, fontSize: 8, fontWeight: FontWeight.bold, letterSpacing: 0.5),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 0.5,
+                              ),
                             ),
                           ),
                           const SizedBox(height: 6),
                           Text(
                             banner['title'] as String,
-                            style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w900),
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w900,
+                            ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
                           const SizedBox(height: 3),
                           Text(
                             banner['subtitle'] as String,
-                            style: const TextStyle(color: Colors.white70, fontSize: 10, height: 1.2),
+                            style: const TextStyle(
+                              color: Colors.white70,
+                              fontSize: 10,
+                              height: 1.2,
+                            ),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -645,7 +837,7 @@ class _CampaignSliderState extends State<_CampaignSlider> {
                           color: Colors.white24,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               );
@@ -664,7 +856,7 @@ class _CampaignSliderState extends State<_CampaignSlider> {
               dotColor: Colors.grey.shade300,
             ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -713,19 +905,25 @@ class _CategoriesRow extends GetView<HomeController> {
                     margin: const EdgeInsets.symmetric(horizontal: 4),
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     decoration: BoxDecoration(
-                      color: isSelected ? const Color(0xFFFF5A36) : Colors.white,
+                      color: isSelected
+                          ? const Color(0xFFFF5A36)
+                          : Colors.white,
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
-                        color: isSelected ? const Color(0xFFFF5A36) : const Color(0xFFE2E8F0),
+                        color: isSelected
+                            ? const Color(0xFFFF5A36)
+                            : const Color(0xFFE2E8F0),
                         width: 1,
                       ),
                       boxShadow: isSelected
                           ? [
                               BoxShadow(
-                                color: const Color(0xFFFF5A36).withValues(alpha: 0.2),
+                                color: const Color(
+                                  0xFFFF5A36,
+                                ).withValues(alpha: 0.2),
                                 blurRadius: 6,
                                 offset: const Offset(0, 3),
-                              )
+                              ),
                             ]
                           : null,
                     ),
@@ -741,8 +939,12 @@ class _CategoriesRow extends GetView<HomeController> {
                           name,
                           style: TextStyle(
                             fontSize: 11,
-                            fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
-                            color: isSelected ? Colors.white : const Color(0xFF64748B),
+                            fontWeight: isSelected
+                                ? FontWeight.w700
+                                : FontWeight.w600,
+                            color: isSelected
+                                ? Colors.white
+                                : const Color(0xFF64748B),
                           ),
                         ),
                       ],
@@ -768,162 +970,209 @@ class _FlashSaleSection extends GetView<HomeController> {
     if (flashProducts.isEmpty) return const SizedBox.shrink();
 
     return Container(
-        padding: const EdgeInsets.symmetric(vertical: 14),
-        decoration: const BoxDecoration(
-          color: Color(0xFFFFF7F5),
-        ),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  // Timer badge
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFF5A36),
-                      borderRadius: BorderRadius.circular(6),
+      padding: const EdgeInsets.symmetric(vertical: 14),
+      decoration: const BoxDecoration(color: Color(0xFFFFF7F5)),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: [
+                // Timer badge
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFF5A36),
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(
+                            Icons.bolt_rounded,
+                            color: Colors.white,
+                            size: 14,
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .scale(
+                            begin: const Offset(1.0, 1.0),
+                            end: const Offset(1.3, 1.3),
+                            duration: 600.ms,
+                          )
+                          .tint(color: Colors.yellow),
+                      const SizedBox(width: 2),
+                      const Text(
+                        'FLASH SALE',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 10),
+                // Timer ticking
+                Obx(
+                  () => Text(
+                    controller.flashSaleTimerText.value,
+                    style: const TextStyle(
+                      fontFamily: 'monospace',
+                      color: Color(0xFFFF5A36),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
                     ),
-                    child: Row(
+                  ),
+                ),
+                const Spacer(),
+                GestureDetector(
+                  onTap: () {
+                    controller.selectedCategory.value = 'All';
+                    Get.snackbar(
+                      'Flash Sale',
+                      'Showing all ongoing flash sale items.',
+                      snackPosition: SnackPosition.BOTTOM,
+                    );
+                  },
+                  child: const Row(
+                    children: [
+                      Text(
+                        'See All',
+                        style: TextStyle(
+                          color: Color(0xFFFF5A36),
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_right_rounded,
+                        color: Color(0xFFFF5A36),
+                        size: 14,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 12),
+          SizedBox(
+            height: 160,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              itemCount: flashProducts.length,
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              itemBuilder: (context, idx) {
+                final p = flashProducts[idx];
+                return GestureDetector(
+                  onTap: () => _showProductDetailsSheet(context, p),
+                  child: Container(
+                    width: 120,
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: const Color(0xFFF1F5F9)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Icon(Icons.bolt_rounded, color: Colors.white, size: 14)
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scale(begin: const Offset(1.0, 1.0), end: const Offset(1.3, 1.3), duration: 600.ms)
-                            .tint(color: Colors.yellow),
-                        const SizedBox(width: 2),
-                        const Text(
-                          'FLASH SALE',
-                          style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 0.5),
+                        Expanded(
+                          child: Stack(
+                            children: [
+                              ClipRRect(
+                                borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(12),
+                                ),
+                                child: CachedNetworkImage(
+                                  imageUrl: p.imageUrl,
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  fit: BoxFit.cover,
+                                  placeholder: (context, url) =>
+                                      Container(color: Colors.grey.shade100),
+                                ),
+                              ),
+                              Positioned(
+                                top: 4,
+                                left: 4,
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 4,
+                                    vertical: 2,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFFF5A36),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Text(
+                                    '-${p.discountPercentage}%',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 8,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(6),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                p.title,
+                                style: const TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF1E293B),
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(height: 2),
+                              Row(
+                                children: [
+                                  Text(
+                                    '৳${p.discountPrice.toStringAsFixed(0)}',
+                                    style: const TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color(0xFFFF5A36),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    '৳${p.price.toStringAsFixed(0)}',
+                                    style: TextStyle(
+                                      fontSize: 9,
+                                      decoration: TextDecoration.lineThrough,
+                                      color: Colors.grey.shade400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  // Timer ticking
-                  Obx(
-                    () => Text(
-                      controller.flashSaleTimerText.value,
-                      style: const TextStyle(
-                        fontFamily: 'monospace',
-                        color: Color(0xFFFF5A36),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      controller.selectedCategory.value = 'All';
-                      Get.snackbar('Flash Sale', 'Showing all ongoing flash sale items.', snackPosition: SnackPosition.BOTTOM);
-                    },
-                    child: const Row(
-                      children: [
-                        Text('See All', style: TextStyle(color: Color(0xFFFF5A36), fontSize: 11, fontWeight: FontWeight.bold)),
-                        Icon(Icons.keyboard_arrow_right_rounded, color: Color(0xFFFF5A36), size: 14),
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                );
+              },
             ),
-            const SizedBox(height: 12),
-            SizedBox(
-              height: 160,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                physics: const BouncingScrollPhysics(),
-                itemCount: flashProducts.length,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                itemBuilder: (context, idx) {
-                  final p = flashProducts[idx];
-                  return GestureDetector(
-                    onTap: () => _showProductDetailsSheet(context, p),
-                    child: Container(
-                      width: 120,
-                      margin: const EdgeInsets.symmetric(horizontal: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: const Color(0xFFF1F5F9)),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Stack(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-                                  child: CachedNetworkImage(
-                                    imageUrl: p.imageUrl,
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                    fit: BoxFit.cover,
-                                    placeholder: (context, url) => Container(color: Colors.grey.shade100),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: 4,
-                                  left: 4,
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFFF5A36),
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                    child: Text(
-                                      '-${p.discountPercentage}%',
-                                      style: const TextStyle(color: Colors.white, fontSize: 8, fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(6),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  p.title,
-                                  style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w600, color: Color(0xFF1E293B)),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                const SizedBox(height: 2),
-                                Row(
-                                  children: [
-                                    Text(
-                                      '৳${p.discountPrice.toStringAsFixed(0)}',
-                                      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: Color(0xFFFF5A36)),
-                                    ),
-                                    const SizedBox(width: 4),
-                                    Text(
-                                      '৳${p.price.toStringAsFixed(0)}',
-                                      style: TextStyle(
-                                        fontSize: 9,
-                                        decoration: TextDecoration.lineThrough,
-                                        color: Colors.grey.shade400,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
-            )
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -942,7 +1191,11 @@ class _ProductsGridView extends GetView<HomeController> {
             padding: const EdgeInsets.symmetric(vertical: 40),
             child: Column(
               children: [
-                Icon(Icons.search_off_rounded, size: 48, color: Colors.grey.shade400),
+                Icon(
+                  Icons.search_off_rounded,
+                  size: 48,
+                  color: Colors.grey.shade400,
+                ),
                 const SizedBox(height: 10),
                 Text(
                   'No products found matching filters',
@@ -977,7 +1230,7 @@ class _ProductsGridView extends GetView<HomeController> {
                   color: Colors.black.withValues(alpha: 0.015),
                   blurRadius: 5,
                   offset: const Offset(0, 3),
-                )
+                ),
               ],
             ),
             child: Column(
@@ -990,15 +1243,16 @@ class _ProductsGridView extends GetView<HomeController> {
                       GestureDetector(
                         onTap: () => _showProductDetailsSheet(context, p),
                         child: ClipRRect(
-                          borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                          borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(16),
+                          ),
                           child: CachedNetworkImage(
                             imageUrl: p.imageUrl,
                             width: double.infinity,
                             height: double.infinity,
                             fit: BoxFit.cover,
-                            placeholder: (context, url) => Container(
-                              color: Colors.grey.shade100,
-                            ),
+                            placeholder: (context, url) =>
+                                Container(color: Colors.grey.shade100),
                           ),
                         ),
                       ),
@@ -1007,18 +1261,29 @@ class _ProductsGridView extends GetView<HomeController> {
                         top: 8,
                         left: 8,
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 6,
+                            vertical: 3,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white.withValues(alpha: 0.9),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Row(
                             children: [
-                              const Icon(Icons.star_rounded, color: Colors.amber, size: 12),
+                              const Icon(
+                                Icons.star_rounded,
+                                color: Colors.amber,
+                                size: 12,
+                              ),
                               const SizedBox(width: 2),
                               Text(
                                 '${p.rating}',
-                                style: const TextStyle(fontSize: 9, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
+                                style: const TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF1E293B),
+                                ),
                               ),
                             ],
                           ),
@@ -1028,28 +1293,36 @@ class _ProductsGridView extends GetView<HomeController> {
                       Positioned(
                         top: 8,
                         right: 8,
-                        child: Obx(
-                          () {
-                            final isWishlisted = controller.wishlist.contains(p.id);
-                            return GestureDetector(
-                              onTap: () => controller.toggleWishlist(p.id),
-                              child: Container(
-                                padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withValues(alpha: 0.9),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  isWishlisted ? Icons.favorite_rounded : Icons.favorite_border_rounded,
-                                  color: isWishlisted ? Colors.red : Colors.grey.shade500,
-                                  size: 14,
-                                )
-                                    .animate(key: ValueKey(isWishlisted))
-                                    .scale(duration: 250.ms, curve: Curves.easeOutBack),
+                        child: Obx(() {
+                          final isWishlisted = controller.wishlist.contains(
+                            p.id,
+                          );
+                          return GestureDetector(
+                            onTap: () => controller.toggleWishlist(p.id),
+                            child: Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.9),
+                                shape: BoxShape.circle,
                               ),
-                            );
-                          },
-                        ),
+                              child:
+                                  Icon(
+                                        isWishlisted
+                                            ? Icons.favorite_rounded
+                                            : Icons.favorite_border_rounded,
+                                        color: isWishlisted
+                                            ? Colors.red
+                                            : Colors.grey.shade500,
+                                        size: 14,
+                                      )
+                                      .animate(key: ValueKey(isWishlisted))
+                                      .scale(
+                                        duration: 250.ms,
+                                        curve: Curves.easeOutBack,
+                                      ),
+                            ),
+                          );
+                        }),
                       ),
                       // Discount Badge
                       if (p.hasDiscount)
@@ -1057,17 +1330,24 @@ class _ProductsGridView extends GetView<HomeController> {
                           bottom: 8,
                           left: 8,
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 6,
+                              vertical: 2,
+                            ),
                             decoration: BoxDecoration(
                               color: const Color(0xFFFF5A36),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
                               '${p.discountPercentage}% OFF',
-                              style: const TextStyle(color: Colors.white, fontSize: 8, fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                        )
+                        ),
                     ],
                   ),
                 ),
@@ -1078,7 +1358,11 @@ class _ProductsGridView extends GetView<HomeController> {
                     children: [
                       Text(
                         p.category,
-                        style: TextStyle(color: Colors.grey.shade400, fontSize: 9, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          color: Colors.grey.shade400,
+                          fontSize: 9,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       const SizedBox(height: 2),
                       GestureDetector(
@@ -1087,7 +1371,11 @@ class _ProductsGridView extends GetView<HomeController> {
                           p.title,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color(0xFF1E293B)),
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xFF1E293B),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 6),
@@ -1099,7 +1387,11 @@ class _ProductsGridView extends GetView<HomeController> {
                             children: [
                               Text(
                                 '৳${p.activePrice.toStringAsFixed(0)}',
-                                style: const TextStyle(color: Color(0xFFFF5A36), fontWeight: FontWeight.w900, fontSize: 13),
+                                style: const TextStyle(
+                                  color: Color(0xFFFF5A36),
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 13,
+                                ),
                               ),
                               if (p.hasDiscount)
                                 Text(
@@ -1122,14 +1414,18 @@ class _ProductsGridView extends GetView<HomeController> {
                                 color: Color(0xFFFF5A36),
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.add_rounded, color: Colors.white, size: 14),
+                              child: const Icon(
+                                Icons.add_rounded,
+                                color: Colors.white,
+                                size: 14,
+                              ),
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           );
@@ -1148,7 +1444,9 @@ class _CategoriesTab extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     // Left side panel categories, right side subcategories/products
-    final categoryList = controller.categories.where((cat) => cat['name'] != 'All').toList();
+    final categoryList = controller.categories
+        .where((cat) => cat['name'] != 'All')
+        .toList();
     final activeTabCategory = 'Groceries'.obs;
 
     return Row(
@@ -1157,58 +1455,60 @@ class _CategoriesTab extends GetView<HomeController> {
         Container(
           width: 90,
           color: const Color(0xFFF1F5F9),
-          child: Obx(
-            () {
-              final selected = activeTabCategory.value;
-              return ListView.builder(
-                itemCount: categoryList.length,
-                itemBuilder: (context, idx) {
-                  final cat = categoryList[idx];
-                  final name = cat['name']!;
-                  final isSelected = selected == name;
+          child: Obx(() {
+            final selected = activeTabCategory.value;
+            return ListView.builder(
+              itemCount: categoryList.length,
+              itemBuilder: (context, idx) {
+                final cat = categoryList[idx];
+                final name = cat['name']!;
+                final isSelected = selected == name;
 
-                  return GestureDetector(
-                    onTap: () {
-                      activeTabCategory.value = name;
-                    },
-                    child: Container(
-                      height: 80,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: isSelected ? Colors.white : Colors.transparent,
-                        border: isSelected
-                            ? const Border(
-                                left: BorderSide(
-                                  color: Color(0xFFFF5A36),
-                                  width: 4,
-                                ),
-                              )
-                            : null,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(cat['icon']!, style: const TextStyle(fontSize: 22))
-                              .animate(key: ValueKey(isSelected))
-                              .scale(duration: 200.ms, curve: Curves.easeOutBack),
-                          const SizedBox(height: 6),
-                          Text(
-                            name,
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
-                              color: isSelected ? const Color(0xFFFF5A36) : const Color(0xFF64748B),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
+                return GestureDetector(
+                  onTap: () {
+                    activeTabCategory.value = name;
+                  },
+                  child: Container(
+                    height: 80,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: isSelected ? Colors.white : Colors.transparent,
+                      border: isSelected
+                          ? const Border(
+                              left: BorderSide(
+                                color: Color(0xFFFF5A36),
+                                width: 4,
+                              ),
+                            )
+                          : null,
                     ),
-                  );
-                },
-              );
-            },
-          ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(cat['icon']!, style: const TextStyle(fontSize: 22))
+                            .animate(key: ValueKey(isSelected))
+                            .scale(duration: 200.ms, curve: Curves.easeOutBack),
+                        const SizedBox(height: 6),
+                        Text(
+                          name,
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: isSelected
+                                ? FontWeight.bold
+                                : FontWeight.w600,
+                            color: isSelected
+                                ? const Color(0xFFFF5A36)
+                                : const Color(0xFF64748B),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            );
+          }),
         ),
 
         // Right Column: Products/Grid details
@@ -1218,7 +1518,9 @@ class _CategoriesTab extends GetView<HomeController> {
             padding: const EdgeInsets.all(12),
             child: Obx(() {
               final catName = activeTabCategory.value;
-              final matchingProducts = controller.products.where((p) => p.category == catName).toList();
+              final matchingProducts = controller.products
+                  .where((p) => p.category == catName)
+                  .toList();
 
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -1228,7 +1530,11 @@ class _CategoriesTab extends GetView<HomeController> {
                     children: [
                       Text(
                         '$catName Collections',
-                        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF1E293B),
+                        ),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -1237,7 +1543,11 @@ class _CategoriesTab extends GetView<HomeController> {
                         },
                         child: const Text(
                           'View All',
-                          style: TextStyle(fontSize: 11, color: Color(0xFFFF5A36), fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Color(0xFFFF5A36),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
@@ -1248,50 +1558,68 @@ class _CategoriesTab extends GetView<HomeController> {
                         ? Center(
                             child: Text(
                               'No products in this category',
-                              style: TextStyle(color: Colors.grey.shade400, fontSize: 12),
+                              style: TextStyle(
+                                color: Colors.grey.shade400,
+                                fontSize: 12,
+                              ),
                             ),
                           )
                         : GridView.builder(
                             itemCount: matchingProducts.length,
-                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              childAspectRatio: 0.78,
-                              crossAxisSpacing: 8,
-                              mainAxisSpacing: 8,
-                            ),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  childAspectRatio: 0.78,
+                                  crossAxisSpacing: 8,
+                                  mainAxisSpacing: 8,
+                                ),
                             itemBuilder: (context, idx) {
                               final p = matchingProducts[idx];
                               return GestureDetector(
-                                onTap: () => _showProductDetailsSheet(context, p),
+                                onTap: () =>
+                                    _showProductDetailsSheet(context, p),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: const Color(0xFFF9FAFB),
                                     borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: const Color(0xFFE2E8F0)),
+                                    border: Border.all(
+                                      color: const Color(0xFFE2E8F0),
+                                    ),
                                   ),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Expanded(
                                         child: ClipRRect(
-                                          borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+                                          borderRadius:
+                                              const BorderRadius.vertical(
+                                                top: Radius.circular(12),
+                                              ),
                                           child: CachedNetworkImage(
                                             imageUrl: p.imageUrl,
                                             width: double.infinity,
                                             height: double.infinity,
                                             fit: BoxFit.cover,
-                                            placeholder: (context, url) => Container(color: Colors.grey.shade100),
+                                            placeholder: (context, url) =>
+                                                Container(
+                                                  color: Colors.grey.shade100,
+                                                ),
                                           ),
                                         ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(6),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               p.title,
-                                              style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                                              style: const TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
                                             ),
@@ -1357,7 +1685,11 @@ class _CartTab extends GetView<HomeController> {
                 const SizedBox(height: 20),
                 const Text(
                   'Your Shopping Cart is Empty',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Color(0xFF1E293B)),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                    color: Color(0xFF1E293B),
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -1371,10 +1703,18 @@ class _CartTab extends GetView<HomeController> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFFF5A36),
                     foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 12,
+                    ),
                   ),
-                  child: const Text('Start Shopping', style: TextStyle(fontWeight: FontWeight.bold)),
+                  child: const Text(
+                    'Start Shopping',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
@@ -1413,7 +1753,8 @@ class _CartTab extends GetView<HomeController> {
                           width: 65,
                           height: 65,
                           fit: BoxFit.cover,
-                          placeholder: (context, url) => Container(color: Colors.grey.shade100),
+                          placeholder: (context, url) =>
+                              Container(color: Colors.grey.shade100),
                         ),
                       ),
                       const SizedBox(width: 12),
@@ -1426,17 +1767,28 @@ class _CartTab extends GetView<HomeController> {
                               product.title,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Color(0xFF1E293B)),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                                color: Color(0xFF1E293B),
+                              ),
                             ),
                             const SizedBox(height: 3),
                             Text(
                               product.category,
-                              style: TextStyle(color: Colors.grey.shade400, fontSize: 10),
+                              style: TextStyle(
+                                color: Colors.grey.shade400,
+                                fontSize: 10,
+                              ),
                             ),
                             const SizedBox(height: 6),
                             Text(
                               '৳${product.activePrice.toStringAsFixed(0)}',
-                              style: const TextStyle(fontWeight: FontWeight.w800, color: Color(0xFFFF5A36), fontSize: 13),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w800,
+                                color: Color(0xFFFF5A36),
+                                fontSize: 13,
+                              ),
                             ),
                           ],
                         ),
@@ -1447,7 +1799,11 @@ class _CartTab extends GetView<HomeController> {
                         children: [
                           IconButton(
                             onPressed: () => controller.removeFromCart(product),
-                            icon: const Icon(Icons.delete_outline, size: 18, color: Colors.grey),
+                            icon: const Icon(
+                              Icons.delete_outline,
+                              size: 18,
+                              color: Colors.grey,
+                            ),
                             padding: EdgeInsets.zero,
                             constraints: const BoxConstraints(),
                           ),
@@ -1460,28 +1816,43 @@ class _CartTab extends GetView<HomeController> {
                             child: Row(
                               children: [
                                 GestureDetector(
-                                  onTap: () => controller.updateQuantity(product, qty - 1),
+                                  onTap: () => controller.updateQuantity(
+                                    product,
+                                    qty - 1,
+                                  ),
                                   child: const Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical: 4,
+                                    ),
                                     child: Icon(Icons.remove, size: 14),
                                   ),
                                 ),
                                 Text(
                                   '$qty',
-                                  style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                                  style: const TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                                 GestureDetector(
-                                  onTap: () => controller.updateQuantity(product, qty + 1),
+                                  onTap: () => controller.updateQuantity(
+                                    product,
+                                    qty + 1,
+                                  ),
                                   child: const Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical: 4,
+                                    ),
                                     child: Icon(Icons.add, size: 14),
                                   ),
                                 ),
                               ],
                             ),
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 );
@@ -1496,7 +1867,10 @@ class _CartTab extends GetView<HomeController> {
             child: Obx(
               () => controller.appliedPromoCode.isNotEmpty
                   ? Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 8,
+                      ),
                       decoration: BoxDecoration(
                         color: const Color(0xFFE8F5E9),
                         borderRadius: BorderRadius.circular(10),
@@ -1504,18 +1878,37 @@ class _CartTab extends GetView<HomeController> {
                       ),
                       child: Row(
                         children: [
-                          const Icon(Icons.check_circle, color: Colors.green, size: 18),
+                          const Icon(
+                            Icons.check_circle,
+                            color: Colors.green,
+                            size: 18,
+                          ),
                           const SizedBox(width: 8),
                           Text(
                             'Coupon "${controller.appliedPromoCode.value}" Applied!',
-                            style: const TextStyle(color: Colors.green, fontSize: 12, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                              color: Colors.green,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           const Spacer(),
                           TextButton(
                             onPressed: () => controller.removePromoCode(),
-                            style: TextButton.styleFrom(padding: EdgeInsets.zero, minimumSize: Size.zero, tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                            child: const Text('Remove', style: TextStyle(color: Colors.red, fontSize: 12, fontWeight: FontWeight.bold)),
-                          )
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              minimumSize: Size.zero,
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            ),
+                            child: const Text(
+                              'Remove',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     )
@@ -1533,7 +1926,10 @@ class _CartTab extends GetView<HomeController> {
                               controller: promoInputController,
                               decoration: InputDecoration(
                                 hintText: 'Enter Promo Code (BAZAAR10 / EID50)',
-                                hintStyle: TextStyle(color: Colors.grey.shade400, fontSize: 11),
+                                hintStyle: TextStyle(
+                                  color: Colors.grey.shade400,
+                                  fontSize: 11,
+                                ),
                                 border: InputBorder.none,
                                 isDense: true,
                               ),
@@ -1545,7 +1941,9 @@ class _CartTab extends GetView<HomeController> {
                         ElevatedButton(
                           onPressed: () {
                             if (promoInputController.text.isNotEmpty) {
-                              final applied = controller.applyPromoCode(promoInputController.text);
+                              final applied = controller.applyPromoCode(
+                                promoInputController.text,
+                              );
                               if (applied) {
                                 promoInputController.clear();
                               }
@@ -1556,9 +1954,17 @@ class _CartTab extends GetView<HomeController> {
                             foregroundColor: Colors.white,
                             elevation: 0,
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                           ),
-                          child: const Text('Apply', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                          child: const Text(
+                            'Apply',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -1576,7 +1982,7 @@ class _CartTab extends GetView<HomeController> {
                   color: Colors.black.withValues(alpha: 0.03),
                   blurRadius: 10,
                   offset: const Offset(0, -4),
-                )
+                ),
               ],
             ),
             child: Column(
@@ -1584,8 +1990,20 @@ class _CartTab extends GetView<HomeController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Subtotal', style: TextStyle(color: Colors.grey.shade500, fontSize: 12)),
-                    Text('৳${controller.subtotal.toStringAsFixed(0)}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+                    Text(
+                      'Subtotal',
+                      style: TextStyle(
+                        color: Colors.grey.shade500,
+                        fontSize: 12,
+                      ),
+                    ),
+                    Text(
+                      '৳${controller.subtotal.toStringAsFixed(0)}',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 6),
@@ -1594,15 +2012,30 @@ class _CartTab extends GetView<HomeController> {
                   children: [
                     Row(
                       children: [
-                        Text('Delivery Fee', style: TextStyle(color: Colors.grey.shade500, fontSize: 12)),
+                        Text(
+                          'Delivery Fee',
+                          style: TextStyle(
+                            color: Colors.grey.shade500,
+                            fontSize: 12,
+                          ),
+                        ),
                         const SizedBox(width: 4),
                         Text(
                           '(${controller.deliveryLocation.value})',
-                          style: TextStyle(color: Colors.grey.shade400, fontSize: 10),
+                          style: TextStyle(
+                            color: Colors.grey.shade400,
+                            fontSize: 10,
+                          ),
                         ),
                       ],
                     ),
-                    Text('৳${controller.deliveryFee.toStringAsFixed(0)}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+                    Text(
+                      '৳${controller.deliveryFee.toStringAsFixed(0)}',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
                   ],
                 ),
                 if (controller.promoDiscountAmount.value > 0) ...[
@@ -1610,8 +2043,21 @@ class _CartTab extends GetView<HomeController> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Coupon Discount', style: const TextStyle(color: Colors.green, fontSize: 12)),
-                      Text('-৳${controller.promoDiscountAmount.value.toStringAsFixed(0)}', style: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 12)),
+                      Text(
+                        'Coupon Discount',
+                        style: const TextStyle(
+                          color: Colors.green,
+                          fontSize: 12,
+                        ),
+                      ),
+                      Text(
+                        '-৳${controller.promoDiscountAmount.value.toStringAsFixed(0)}',
+                        style: const TextStyle(
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -1622,10 +2068,21 @@ class _CartTab extends GetView<HomeController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('Total Amount', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Color(0xFF1E293B))),
+                    const Text(
+                      'Total Amount',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                        color: Color(0xFF1E293B),
+                      ),
+                    ),
                     Text(
                       '৳${controller.total.toStringAsFixed(0)}',
-                      style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: Color(0xFFFF5A36)),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 18,
+                        color: Color(0xFFFF5A36),
+                      ),
                     ),
                   ],
                 ),
@@ -1639,15 +2096,23 @@ class _CartTab extends GetView<HomeController> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFFF5A36),
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                       elevation: 0,
                     ),
-                    child: const Text('Proceed to Checkout', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                    child: const Text(
+                      'Proceed to Checkout',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       );
     });
@@ -1660,18 +2125,27 @@ class _CartTab extends GetView<HomeController> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
           title: const Row(
             children: [
               Icon(Icons.stars, color: Color(0xFFFF5A36)),
               SizedBox(width: 8),
-              Text('Order Confirmed', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              Text(
+                'Order Confirmed',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.check_circle_rounded, color: Colors.green, size: 56).animate().scale(duration: const Duration(milliseconds: 500)),
+              const Icon(
+                Icons.check_circle_rounded,
+                color: Colors.green,
+                size: 56,
+              ).animate().scale(duration: const Duration(milliseconds: 500)),
               const SizedBox(height: 16),
               const Text(
                 'Thank you for your order!',
@@ -1693,9 +2167,14 @@ class _CartTab extends GetView<HomeController> {
                   backgroundColor: const Color(0xFFFF5A36),
                   foregroundColor: Colors.white,
                   minimumSize: const Size.fromHeight(40),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
-                child: const Text('Done', style: TextStyle(fontWeight: FontWeight.bold)),
+                child: const Text(
+                  'Done',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
             ],
           ),
@@ -1732,13 +2211,21 @@ class _ProfileTab extends GetView<HomeController> {
                   backgroundColor: const Color(0xFFFFF1EE),
                   child: const Text(
                     'SS',
-                    style: TextStyle(color: Color(0xFFFF5A36), fontSize: 24, fontWeight: FontWeight.w900),
+                    style: TextStyle(
+                      color: Color(0xFFFF5A36),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12),
                 const Text(
                   'Sourav Sanyal',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF1E293B),
+                  ),
                 ),
                 const SizedBox(height: 2),
                 Text(
@@ -1759,9 +2246,21 @@ class _ProfileTab extends GetView<HomeController> {
                         ),
                         child: const Column(
                           children: [
-                            Text('12', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF1E293B))),
+                            Text(
+                              '12',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF1E293B),
+                              ),
+                            ),
                             SizedBox(height: 2),
-                            Text('My Orders', style: TextStyle(fontSize: 9, color: Color(0xFF64748B))),
+                            Text(
+                              'My Orders',
+                              style: TextStyle(
+                                fontSize: 9,
+                                color: Color(0xFF64748B),
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -1777,9 +2276,21 @@ class _ProfileTab extends GetView<HomeController> {
                         child: Obx(
                           () => Column(
                             children: [
-                              Text('${controller.wishlist.length}', style: const TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF1E293B))),
+                              Text(
+                                '${controller.wishlist.length}',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF1E293B),
+                                ),
+                              ),
                               const SizedBox(height: 2),
-                              const Text('Wishlist', style: TextStyle(fontSize: 9, color: Color(0xFF64748B))),
+                              const Text(
+                                'Wishlist',
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  color: Color(0xFF64748B),
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -1795,15 +2306,27 @@ class _ProfileTab extends GetView<HomeController> {
                         ),
                         child: const Column(
                           children: [
-                            Text('৳১৫০', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF1E293B))),
+                            Text(
+                              '৳১৫০',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF1E293B),
+                              ),
+                            ),
                             SizedBox(height: 2),
-                            Text('Refund Balance', style: TextStyle(fontSize: 9, color: Color(0xFF64748B))),
+                            Text(
+                              'Refund Balance',
+                              style: TextStyle(
+                                fontSize: 9,
+                                color: Color(0xFF64748B),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
@@ -1815,18 +2338,36 @@ class _ProfileTab extends GetView<HomeController> {
             child: Column(
               children: [
                 ListTile(
-                  leading: const Icon(Icons.payment, color: Color(0xFFFF5A36), size: 20),
-                  title: const Text('Saved Payment Methods', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                  leading: const Icon(
+                    Icons.payment,
+                    color: Color(0xFFFF5A36),
+                    size: 20,
+                  ),
+                  title: const Text(
+                    'Saved Payment Methods',
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                  ),
                   subtitle: const Text('bKash, Nagad, Visa, Mastercard'),
                   trailing: const Icon(Icons.keyboard_arrow_right, size: 18),
                   onTap: () {
-                    Get.snackbar('Payments', 'Payments dashboard coming soon.', snackPosition: SnackPosition.BOTTOM);
+                    Get.snackbar(
+                      'Payments',
+                      'Payments dashboard coming soon.',
+                      snackPosition: SnackPosition.BOTTOM,
+                    );
                   },
                 ),
                 const Divider(indent: 50, height: 1),
                 ListTile(
-                  leading: const Icon(Icons.admin_panel_settings_outlined, color: Color(0xFFFF5A36), size: 20),
-                  title: const Text('Admin Panel Dashboard', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                  leading: const Icon(
+                    Icons.admin_panel_settings_outlined,
+                    color: Color(0xFFFF5A36),
+                    size: 20,
+                  ),
+                  title: const Text(
+                    'Admin Panel Dashboard',
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                  ),
                   subtitle: const Text('Manage catalog, stock & active orders'),
                   trailing: const Icon(Icons.keyboard_arrow_right, size: 18),
                   onTap: () {
@@ -1836,12 +2377,26 @@ class _ProfileTab extends GetView<HomeController> {
                 const Divider(indent: 50, height: 1),
                 Obx(
                   () => ListTile(
-                    leading: const Icon(Icons.location_on_outlined, color: Color(0xFFFF5A36), size: 20),
-                    title: const Text('Shipping Address', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                    leading: const Icon(
+                      Icons.location_on_outlined,
+                      color: Color(0xFFFF5A36),
+                      size: 20,
+                    ),
+                    title: const Text(
+                      'Shipping Address',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                     subtitle: Text(controller.deliveryAddress.value),
                     trailing: const Icon(Icons.keyboard_arrow_right, size: 18),
                     onTap: () {
-                      Get.snackbar('Shipping', 'Modify default address in location selector.', snackPosition: SnackPosition.BOTTOM);
+                      Get.snackbar(
+                        'Shipping',
+                        'Modify default address in location selector.',
+                        snackPosition: SnackPosition.BOTTOM,
+                      );
                     },
                   ),
                 ),
@@ -1849,13 +2404,29 @@ class _ProfileTab extends GetView<HomeController> {
                 // Toggle English/Bangla
                 Obx(
                   () => ListTile(
-                    leading: const Icon(Icons.language_rounded, color: Color(0xFFFF5A36), size: 20),
-                    title: const Text('Language (ভাষা)', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                    leading: const Icon(
+                      Icons.language_rounded,
+                      color: Color(0xFFFF5A36),
+                      size: 20,
+                    ),
+                    title: const Text(
+                      'Language (ভাষা)',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                     trailing: Switch(
                       value: languageEn.value,
                       onChanged: (val) {
                         languageEn.value = val;
-                        Get.snackbar('Language Changer', val ? 'Changed to English' : 'বাংলা সিলেক্ট করা হয়েছে', snackPosition: SnackPosition.BOTTOM);
+                        Get.snackbar(
+                          'Language Changer',
+                          val
+                              ? 'Changed to English'
+                              : 'বাংলা সিলেক্ট করা হয়েছে',
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
                       },
                       activeThumbColor: const Color(0xFFFF5A36),
                     ),
@@ -1865,8 +2436,18 @@ class _ProfileTab extends GetView<HomeController> {
                 // Toggle notifications
                 Obx(
                   () => ListTile(
-                    leading: const Icon(Icons.notifications_active_outlined, color: Color(0xFFFF5A36), size: 20),
-                    title: const Text('Push Notifications', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                    leading: const Icon(
+                      Icons.notifications_active_outlined,
+                      color: Color(0xFFFF5A36),
+                      size: 20,
+                    ),
+                    title: const Text(
+                      'Push Notifications',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                     trailing: Switch(
                       value: notificationsOn.value,
                       onChanged: (val) {
@@ -1878,19 +2459,35 @@ class _ProfileTab extends GetView<HomeController> {
                 ),
                 const Divider(indent: 50, height: 1),
                 ListTile(
-                  leading: const Icon(Icons.support_agent_rounded, color: Color(0xFFFF5A36), size: 20),
-                  title: const Text('Help Center & Support', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
-                  subtitle: const Text('Call: 16244 • Email: support@bazaarbd.com'),
+                  leading: const Icon(
+                    Icons.support_agent_rounded,
+                    color: Color(0xFFFF5A36),
+                    size: 20,
+                  ),
+                  title: const Text(
+                    'Help Center & Support',
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    'Call: 16244 • Email: support@bazaarbd.com',
+                  ),
                   trailing: const Icon(Icons.keyboard_arrow_right, size: 18),
                   onTap: () {
-                    Get.snackbar('Support', 'Initiating live chat support...', snackPosition: SnackPosition.BOTTOM);
+                    Get.snackbar(
+                      'Support',
+                      'Initiating live chat support...',
+                      snackPosition: SnackPosition.BOTTOM,
+                    );
                   },
                 ),
               ],
             ),
           ),
           const SizedBox(height: 24),
-          const Text('App Version 1.0.0 (BazaarBD)', style: TextStyle(color: Colors.grey, fontSize: 10)),
+          const Text(
+            'App Version 1.0.0 (BazaarBD)',
+            style: TextStyle(color: Colors.grey, fontSize: 10),
+          ),
           const SizedBox(height: 30),
         ],
       ),
@@ -1927,13 +2524,16 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                 Stack(
                   children: [
                     ClipRRect(
-                      borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(24),
+                      ),
                       child: CachedNetworkImage(
                         imageUrl: p.imageUrl,
                         width: double.infinity,
                         height: 280,
                         fit: BoxFit.cover,
-                        placeholder: (context, url) => Container(color: Colors.grey.shade100),
+                        placeholder: (context, url) =>
+                            Container(color: Colors.grey.shade100),
                       ),
                     ),
                     Positioned(
@@ -1942,7 +2542,10 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                       child: CircleAvatar(
                         backgroundColor: Colors.white.withValues(alpha: 0.9),
                         child: IconButton(
-                          icon: const Icon(Icons.close_rounded, color: Colors.black),
+                          icon: const Icon(
+                            Icons.close_rounded,
+                            color: Colors.black,
+                          ),
                           onPressed: () => Navigator.pop(context),
                         ),
                       ),
@@ -1958,28 +2561,46 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                       Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 4,
+                            ),
                             decoration: BoxDecoration(
                               color: const Color(0xFFFFF1EE),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
                               p.category.toUpperCase(),
-                              style: const TextStyle(color: Color(0xFFFF5A36), fontSize: 9, fontWeight: FontWeight.bold, letterSpacing: 0.5),
+                              style: const TextStyle(
+                                color: Color(0xFFFF5A36),
+                                fontSize: 9,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 0.5,
+                              ),
                             ),
                           ),
                           const Spacer(),
                           // Star rating
-                          const Icon(Icons.star_rounded, color: Colors.amber, size: 16),
+                          const Icon(
+                            Icons.star_rounded,
+                            color: Colors.amber,
+                            size: 16,
+                          ),
                           const SizedBox(width: 2),
                           Text(
                             '${p.rating}',
-                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                            ),
                           ),
                           const SizedBox(width: 4),
                           Text(
                             '(${p.reviews} reviews)',
-                            style: TextStyle(color: Colors.grey.shade400, fontSize: 10),
+                            style: TextStyle(
+                              color: Colors.grey.shade400,
+                              fontSize: 10,
+                            ),
                           ),
                         ],
                       ),
@@ -1988,7 +2609,11 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                       // Title
                       Text(
                         p.title,
-                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Color(0xFF1E293B)),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xFF1E293B),
+                        ),
                       ),
                       const SizedBox(height: 10),
 
@@ -1997,7 +2622,11 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                         children: [
                           Text(
                             '৳${p.activePrice.toStringAsFixed(0)}',
-                            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: Color(0xFFFF5A36)),
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w900,
+                              color: Color(0xFFFF5A36),
+                            ),
                           ),
                           if (p.hasDiscount) ...[
                             const SizedBox(width: 8),
@@ -2011,14 +2640,21 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                             ),
                             const SizedBox(width: 8),
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 6,
+                                vertical: 2,
+                              ),
                               decoration: BoxDecoration(
                                 color: const Color(0xFFFFEBE7),
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               child: Text(
                                 '${p.discountPercentage}% OFF',
-                                style: const TextStyle(color: Color(0xFFFF5A36), fontSize: 10, fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                  color: Color(0xFFFF5A36),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ],
@@ -2030,17 +2666,23 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                       Row(
                         children: [
                           Icon(
-                            p.stock > 10 ? Icons.check_circle_outline_rounded : Icons.warning_amber_rounded,
+                            p.stock > 10
+                                ? Icons.check_circle_outline_rounded
+                                : Icons.warning_amber_rounded,
                             color: p.stock > 10 ? Colors.green : Colors.amber,
                             size: 16,
                           ),
                           const SizedBox(width: 4),
                           Text(
-                            p.stock > 10 ? 'In Stock (${p.stock} units)' : 'Only ${p.stock} units left in stock!',
+                            p.stock > 10
+                                ? 'In Stock (${p.stock} units)'
+                                : 'Only ${p.stock} units left in stock!',
                             style: TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w600,
-                              color: p.stock > 10 ? Colors.green : Colors.amber.shade700,
+                              color: p.stock > 10
+                                  ? Colors.green
+                                  : Colors.amber.shade700,
                             ),
                           ),
                         ],
@@ -2050,12 +2692,20 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                       // Description
                       const Text(
                         'Product Details',
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF1E293B),
+                        ),
                       ),
                       const SizedBox(height: 6),
                       Text(
                         p.description,
-                        style: TextStyle(fontSize: 12, color: Colors.grey.shade600, height: 1.5),
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey.shade600,
+                          height: 1.5,
+                        ),
                       ),
                       const SizedBox(height: 24),
 
@@ -2071,11 +2721,18 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                                   Navigator.pop(context);
                                 },
                                 style: OutlinedButton.styleFrom(
-                                  side: const BorderSide(color: Color(0xFFFF5A36)),
+                                  side: const BorderSide(
+                                    color: Color(0xFFFF5A36),
+                                  ),
                                   foregroundColor: const Color(0xFFFF5A36),
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
                                 ),
-                                child: const Text('Add to Cart', style: TextStyle(fontWeight: FontWeight.bold)),
+                                child: const Text(
+                                  'Add to Cart',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),
@@ -2092,10 +2749,15 @@ void _showProductDetailsSheet(BuildContext context, Product p) {
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFFFF5A36),
                                   foregroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
                                   elevation: 0,
                                 ),
-                                child: const Text('Buy Now', style: TextStyle(fontWeight: FontWeight.bold)),
+                                child: const Text(
+                                  'Buy Now',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),
